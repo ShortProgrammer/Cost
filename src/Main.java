@@ -63,7 +63,7 @@ public class Main {
 		
 		double finalCost = preCost - off + costSales + shipping;
 		
-		System.out.println("The cost of the order is: $" + finalCost);
+		System.out.printf("The cost of the order is: $%.2f", finalCost);
 	}
 
 }
