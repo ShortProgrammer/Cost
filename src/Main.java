@@ -1,6 +1,5 @@
 import java.util.*;
 public class Main {
-//May want to add a way to delete items
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		Sort sort = new Sort();
