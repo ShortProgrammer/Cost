@@ -3,6 +3,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
+		Sort sort = new Sort();
 		
 		//Cart
 		System.out.println("Please input the number of items: ");
