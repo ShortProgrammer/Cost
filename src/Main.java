@@ -9,28 +9,32 @@ public class Main {
 		System.out.println("Please input the number of items: ");
 		int items = input.nextInt();
 		
-		double [] cart = new double[items];
+		ArrayList<Double> itemCost = new ArrayList<Double>();
+		ArrayList<String> itemName = new ArrayList<String>();
 		
-		System.out.println("Please enter the cost of each item: ");
+		System.out.println("Please enter the name of the item and the cost: ");
 		for(int i = 0; i < items; i++) {
-			cart[i] = input.nextDouble();
+			itemName.add(i,input.next());
+			itemCost.add(i,input.nextDouble());
 		}
 		
 		System.out.println();
 		
 		//For testing the array
 //		for(int i = 0; i < items; i++) {
-//			System.out.println(cart[i]);
+//			System.out.println(itemName.get(i) + " " + itemCost.get(i));
 //		}
 		
 		//Coupons
 		System.out.println("Please enter the number of coupons that you have: ");
 		int numberCoupons = input.nextInt();
-		
 		double [] coupons = new double[numberCoupons];
-		System.out.println("Please enter each of your coupons: ");
-		for(int i = 0; i < numberCoupons; i++) {
-			coupons[i] = input.nextDouble();
+		
+		if(numberCoupons >= 1) {
+			System.out.println("Please enter each of your coupons: ");
+			for(int i = 0; i < numberCoupons; i++) {
+				coupons[i] = input.nextDouble();
+			}
 		}
 		
 		System.out.println();
@@ -51,13 +55,15 @@ public class Main {
 		//Cost of items
 		double preCost = 0.0;
 		for(int i = 0; i < items; i++) {
-			preCost = preCost + cart[i];
+			preCost = preCost + itemCost.get(i);
 		}
 		
 		//Coupons
 		double off = 0.0;
-		for(int i = 0; i < numberCoupons; i++) {
-			off = off + coupons[i];
+		if(numberCoupons >= 1) {
+			for(int i = 0; i < numberCoupons; i++) {
+				off = off + coupons[i];
+			}
 		}
 		
 		double costSales = (preCost - off)*sales;
